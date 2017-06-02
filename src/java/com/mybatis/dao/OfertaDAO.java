@@ -5,10 +5,13 @@
  */
 package com.mybatis.dao;
 
+import com.mybatis.vo.Oferta;
+
 /**
  *
  * @author Melissa
  */
 public interface OfertaDAO {
-    
+    public void crearOferta(Oferta oferta);
+    public void modificarOferta(Oferta oferta);
 }
