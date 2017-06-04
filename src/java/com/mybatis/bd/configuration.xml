@@ -14,9 +14,7 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="com/mybatis/mappers/FacturaMapper.xml"/>
-                <mapper resource="com/mybatis/mappers/OfertaMapper.xml"/>
-                <mapper resource="com/mybatis/mappers/UsuarioMapper.xml"/>
+		<mapper resource="com/mybatis/mappers/ProveedorMapper.xml"/>                
 	</mappers>
        
 </configuration>

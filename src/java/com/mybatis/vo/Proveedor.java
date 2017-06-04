@@ -25,6 +25,10 @@ public class Proveedor implements Serializable {
 
 	private String tipoproveedor;
 
+        private String direccion;
+        
+        private String telefono;
+        
 	//bi-directional many-to-one association to Factura
 	@OneToMany(mappedBy="proveedor")
 	private List<Factura> facturas;
@@ -35,6 +39,11 @@ public class Proveedor implements Serializable {
 
 	public Proveedor() {
 	}
+        
+        public Proveedor(int idproveedor, String nombre) {
+            this.idproveedor = idproveedor;
+            this.nombrepro = nombre;
+        }
 
 	public int getIdproveedor() {
 		return this.idproveedor;
@@ -68,6 +77,22 @@ public class Proveedor implements Serializable {
 		this.tipoproveedor = tipoproveedor;
 	}
 
+        public String getDireccion() {
+            return direccion;
+        }
+
+        public void setDireccion(String direccion) {
+            this.direccion = direccion;
+        }
+
+        public String getTelefono() {
+            return telefono;
+        }
+
+        public void setTelefono(String telefono) {
+            this.telefono = telefono;
+        }
+        
 	public List<Factura> getFacturas() {
 		return this.facturas;
 	}

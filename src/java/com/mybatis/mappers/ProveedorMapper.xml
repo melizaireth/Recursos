@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"  >
+<mapper namespace="com.mybatis.dao.ProveedorDAO">
+    <insert id="CREAR_PROVEEDOR" useGeneratedKeys="true" parameterType="com.mybatis.vo.Proveedor">
+        insert into proveedor (nombrepro, fechaingreso, tipoproveedor, direccion, telefono) values (#{nombrepro}, #{fechaingreso}, #{tipoproveedor}, #{direccion}, #{telefono})     
+    </insert>
+
+    <select id="BUSCAR_PROVEEDOR" parameterType="int" resultType="com.mybatis.vo.Proveedor">
+        select * from proveedor where idproveedor=#{idproveedor}
+    </select>
+
+    <select id="ALL_PROVEEDORES" resultType="com.mybatis.vo.Proveedor">
+        select idproveedor, nombrepro from proveedor
+    </select>
+
+</mapper>

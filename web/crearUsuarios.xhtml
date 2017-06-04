@@ -16,14 +16,12 @@
                 <p:menuitem value="Modificar Usuario" outcome="modificarUsuarios" >
                     <f:param name="i" value="1" />
                 </p:menuitem>
-                <p:menuitem value="Baja Usuario"  outcome="bajaUsuario" >
+                
+                 <p:menuitem value="Alta Proveedor"  outcome="altaProveedor" >
                     <f:param name="i" value="2" />
                 </p:menuitem>
-                 <p:menuitem value="Alta Proveedor"  outcome="altaProveedor" >
-                    <f:param name="i" value="3" />
-                </p:menuitem>
                  <p:menuitem value="Baja Proveedor"  outcome="bajaProveedor" >
-                    <f:param name="i" value="4" />
+                    <f:param name="i" value="3" />
                 </p:menuitem>
 
             </p:tabMenu>
@@ -34,26 +32,26 @@
         <p:panel header="Alta de Usuario" style="margin-bottom:20px">
             <p:panelGrid columns="2">
                 <p:outputLabel value="Login:"/>
-                <p:inputText/>
+                <p:inputText maxlength="45" size="45" value="#{user.u.login}"/>
                 <p:outputLabel value="Password:"/>
-                <p:password/>
+                <p:password maxlength="45" size="45" value="#{user.u.password}"/>
                 <p:outputLabel value="Nombre:"/>
-                <p:inputText/>
-                <p:outputLabel value="Apellido:"/>
-                <p:inputText/>
+                <p:inputText maxlength="45" size="45" value="#{user.u.nombre}"/>
+                <p:outputLabel value="Apellidos:"/>
+                <p:inputText maxlength="45" size="45" value="#{user.u.apellidos}"/>
                 <p:outputLabel value="Proveedor:"/>      
-                <p:selectOneMenu>
+                <p:selectOneMenu value="#{user.proveedor}">
                     <f:selectItem itemLabel="Select One" itemValue="" />
-                    <f:selectItems  />                    
+                    <f:selectItems  value="#{user.lp}" var="pro" itemLabel="#{pro.nombrepro}" itemValue="#{pro.idproveedor}"/>                    
                 </p:selectOneMenu>
                 <p:outputLabel value="Departamento:"/>
-                <p:selectOneMenu>
+                <p:selectOneMenu value = "#{user.tipo}">
                     <f:selectItem itemLabel="Select One" itemValue="" />
-                    <f:selectItems  />                    
+                    <f:selectItems value="#{user.tiposUser}" var="usuario" itemLabel="#{usuario}" itemValue="#{useuario}" />                    
                 </p:selectOneMenu>
                 
             </p:panelGrid>
-            <p:commandButton value="Alta"/>
+            <p:commandButton value="Alta" actionListener="#{user.nuevoUsuario()}"/>
         </p:panel>
             </h:form>
         

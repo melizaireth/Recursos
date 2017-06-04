@@ -6,14 +6,27 @@
 package com.mybatis.dao;
 
 import com.entities.Usuario;
+import java.util.List;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
 
 /**
  *
  * @author Melissa
  */
 public interface UsuarioDAO {
-    //public void crearUsuario(UsuarioVO uvo);
-    public void modificarUsuario(Usuario uvo);
-    public void usuarioByID();
+    public String USER_FRONT_FACTURA = "Front Facturación";
+    public String USER_FRONT_RECURSO = "Front Recursos";
+    public String USER_BACK_FACTURA = "Back Facturación";
+    public String USER_BACK_RECURSO = "Back Recursos";
+            
+    @Insert("CREAR_USUARIO")
+    public void crearUsuario(Usuario u);
+   // public void modificarUsuario(Usuario uvo);
+   // public void usuarioByID();
+    public List<String> tipoUsuario();
+    
+    @Select("VERIFICA_LOGIN")
+    public int verificarLogin(Usuario u);
     
 }

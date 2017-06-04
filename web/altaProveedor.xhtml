@@ -9,27 +9,45 @@
     </h:head>
     <h:body>
         <h:form>
-             <p:tabMenu >
+             <p:tabMenu activeIndex="#{param.i}" >
                 <p:menuitem value="Alta Usuario" outcome="crearUsuarios" > 
                     <f:param name="i" value="0" />
                 </p:menuitem>
                 <p:menuitem value="Modificar Usuario" outcome="modificarUsuarios" >
                     <f:param name="i" value="1" />
                 </p:menuitem>
-                <p:menuitem value="Baja Usuario"  outcome="bajaUsuario">
+               
+                <p:menuitem value="Alta Proveedor"  outcome="altaProveedor" >
                     <f:param name="i" value="2" />
                 </p:menuitem>
-                <p:menuitem value="Alta Proveedor"  outcome="altaProveedor" >
-                    <f:param name="i" value="3" />
-                </p:menuitem>
                 <p:menuitem value="Baja Proveedor"  outcome="bajaProveedor" >
-                    <f:param name="i" value="4" />
+                    <f:param name="i" value="3" />
                 </p:menuitem>
             </p:tabMenu>
             <br/>
       
         <br/>
         </h:form>
+        
+        <h:form >
+            
+            <p:panel header="Alta Proveedor" style="margin-bottom:20px">
+                <p:panelGrid columns="2" >
+                    <p:outputLabel value="Nombre Proveedor:"/>
+                    <p:inputText value="#{proveedor.p.nombrepro}"/>
+                    <p:outputLabel value="Direccion:"/>
+                    <p:inputTextarea value="#{proveedor.p.direccion}" rows="5" cols="30"  maxlength="105" counterTemplate="{0} characters remaining." autoResize="false" />
+                    <p:outputLabel value="Teléfono:"/>
+                    <p:inputText value="#{proveedor.p.telefono}"/>
+                    <p:outputLabel value="Tipo:"/>
+                    <p:inputText value="#{proveedor.p.tipoproveedor}"/>
+
+                </p:panelGrid>
+                <p:commandButton value="Alta" actionListener="#{proveedor.altaProveedor()}"/>
+            </p:panel>
+                
+        </h:form>
+        
     </h:body>
 </html>
 
