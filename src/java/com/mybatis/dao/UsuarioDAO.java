@@ -29,4 +29,6 @@ public interface UsuarioDAO {
     @Select("VERIFICA_LOGIN")
     public int verificarLogin(Usuario u);
     
+    @Select("ALL_USUARIOS")
+    public List<Usuario> getAllUsuario();
 }

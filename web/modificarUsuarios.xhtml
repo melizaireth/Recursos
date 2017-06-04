@@ -8,7 +8,8 @@
         <title>Modificar Usuario</title>
     </h:head>
     <h:body>
-         <h:form>
+         <h:form id="form">
+             <p:growl id="msgs" showDetail="true"/>
              <p:tabMenu activeIndex="#{param.i}">
                 <p:menuitem value="Alta Usuario" outcome="crearUsuarios" >
                     <f:param name="i" value="0" />
@@ -29,7 +30,46 @@
         <br/>
         
         <p:panel header="Modificar Usuario" style="margin-bottom:20px">
-       
+            <p:dataTable editable="true" style="margin-bottom:20px" value="#{editUsuario.usuarios}" var="u">
+                <p:ajax event="rowEdit" listener="#{editUsuario.onRowEdit}" update=":form:msgs" />
+                <p:ajax event="rowEditCancel" listener="#{editUsuario.onRowCancel}" update=":form:msgs" />
+                <p:column  headerText="Login">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{u.login}" /></f:facet>
+                        <f:facet name="input"><p:inputText id="modelInput" value="#{u.login}" style="width:100%"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+                <p:column  headerText="Password">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{u.password}" /></f:facet>
+                        <f:facet name="input"><p:inputText id="password" value="#{u.password}" style="width:100%"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+                
+                <p:column  headerText="Nombre">
+                   <p:cellEditor>
+                       <f:facet name="output"><h:outputText value="#{u.nombre}" /></f:facet>
+                       <f:facet name="input"><p:inputText id="nombre" value="#{u.nombre}" style="width:100%"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+                <p:column  headerText="Apellido">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{u.apellidos}" /></f:facet>
+                        <f:facet name="input"><p:inputText id="apellido" value="#{u.apellidos}" style="width:100%"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+                
+                <p:column  headerText="Proveedor">
+                    <h:outputText value="Nada"/>
+                </p:column>
+                <p:column  headerText="Departamento">
+                    <h:outputText value="Password"/>
+                </p:column>
+                <p:column style="width:32px">
+                    <p:rowEditor />
+                </p:column>
+                
+            </p:dataTable>
             </p:panel>
             </h:form>
         

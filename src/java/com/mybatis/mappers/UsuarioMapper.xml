@@ -6,6 +6,10 @@
         select * from usuario where login=#{login}
     </select>
 
+    <select id="ALL_USUARIOS"  resultType="com.mybatis.vo.Usuario">
+        select * from usuario
+    </select>
+
     <insert id="CREAR_USUARIO" parameterType="com.mybatis.vo.Usuario">
         insert into usuario (login, password, perfil, nombre, apellidos, idproveedor, departamento) Values (#{login}, #{password}, #{perfil}, #{nombre}, #{apellidos}, #{idproveedor}, #{departamento})        
     </insert>

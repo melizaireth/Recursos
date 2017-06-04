@@ -35,9 +35,9 @@ public class UsuarioBO implements UsuarioDAO{
         
         if(session!=null){
             try{
-                System.out.println("verifica el usuario: "+u.getLogin());
+                
                 Usuario usuario =  (Usuario) session.selectOne("com.mybatis.dao.UsuarioDAO.VERIFICA_LOGIN", u.getLogin());               
-                System.out.println("Busca el usuario: "+usuario==null);
+                
                 if(usuario==null){
                     ok = 0;
                 }else{
@@ -68,6 +68,25 @@ public class UsuarioBO implements UsuarioDAO{
         }else{
             //enviar mensaje
         }
+    }
+
+    @Override
+    public List<Usuario> getAllUsuario() {
+        SqlSession session = new MapperUtil().getSession();
+        List<Usuario> usuarios = new ArrayList<Usuario>();
+        
+        if(session!=null){
+            try{
+                
+                usuarios =   session.selectList("com.mybatis.dao.UsuarioDAO.ALL_USUARIOS");      
+              
+            }finally{
+                session.close();
+            }
+        }else{
+            //enviar mensaje
+        }
+        return usuarios;
     }
     
 }
