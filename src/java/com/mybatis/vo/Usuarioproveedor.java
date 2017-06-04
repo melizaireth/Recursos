@@ -1,4 +1,4 @@
-package com.entities;
+package com.mybatis.vo;
 
 import java.io.Serializable;
 import javax.persistence.*;

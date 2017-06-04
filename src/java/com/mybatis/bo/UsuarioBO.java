@@ -5,7 +5,7 @@
  */
 package com.mybatis.bo;
 
-import com.entities.Usuario;
+import com.mybatis.vo.Usuario;
 import com.mybatis.bd.MapperUtil;
 import com.mybatis.dao.UsuarioDAO;
 import java.util.ArrayList;
@@ -32,12 +32,15 @@ public class UsuarioBO implements UsuarioDAO{
     public int verificarLogin(Usuario u) {
         SqlSession session = new MapperUtil().getSession();
         int ok = 0;
-        Usuario usuario = new Usuario();
+        
         if(session!=null){
             try{
-                
-                usuario =  session.selectOne("com.mybatis.dao.UsuarioDAO.", u);               
-                if(usuario!=null){
+                System.out.println("verifica el usuario: "+u.getLogin());
+                Usuario usuario =  (Usuario) session.selectOne("com.mybatis.dao.UsuarioDAO.VERIFICA_LOGIN", u.getLogin());               
+                System.out.println("Busca el usuario: "+usuario==null);
+                if(usuario==null){
+                    ok = 0;
+                }else{
                     ok = 1;
                 }
               

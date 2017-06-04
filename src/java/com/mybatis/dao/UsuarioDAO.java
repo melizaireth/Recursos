@@ -5,7 +5,7 @@
  */
 package com.mybatis.dao;
 
-import com.entities.Usuario;
+import com.mybatis.vo.Usuario;
 import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
