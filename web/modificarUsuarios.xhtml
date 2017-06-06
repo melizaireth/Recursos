@@ -60,14 +60,35 @@
                 </p:column>
                 
                 <p:column  headerText="Proveedor">
-                    <h:outputText value="Nada"/>
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{u.idproveedor}" /></f:facet>
+                        <f:facet name="input">
+                            <h:selectOneMenu value="#{editUsuario.proveedor}" style="width:100%">
+                                <f:selectItems value="#{editUsuario.proveedores}" var="p" itemLabel="#{p.nombrepro}" itemValue="#{p.idproveedor}" />
+                            </h:selectOneMenu>
+                        </f:facet>
+                    </p:cellEditor>
                 </p:column>
                 <p:column  headerText="Departamento">
-                    <h:outputText value="Password"/>
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{u.departamento}" /></f:facet>
+                        <f:facet name="input">
+                            <h:selectOneMenu value="#{editUsuario.tipo}" style="width:100%">
+                                <f:selectItems value="#{editUsuario.tiposUser}" var="tipoU" itemLabel="#{tipoU}" itemValue="#{tipoU}" />
+                            </h:selectOneMenu>
+                        </f:facet>
+                    </p:cellEditor>
                 </p:column>
                 <p:column style="width:32px">
-                    <p:rowEditor />
+                    <p:rowEditor />                        
                 </p:column>
+                <p:column style="width:32px">
+                    <p:commandButton icon="ui-icon-trash" type="button" >
+                        <f:param name="user" value="#{u.idusuario}"/>
+                        <f:attribute name="users" value="#{u}"/>
+                        <p:ajax listener="#{editUsuario.darBaja}" />                       
+                    </p:commandButton>
+                </p:column> 
                 
             </p:dataTable>
             </p:panel>

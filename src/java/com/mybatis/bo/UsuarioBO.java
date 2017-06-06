@@ -88,5 +88,73 @@ public class UsuarioBO implements UsuarioDAO{
         }
         return usuarios;
     }
+
+    @Override
+    public int actualizaUsuario(Usuario u, int okPass) {
+        SqlSession session = new MapperUtil().getSession();
+        int ok = 0;
+        if(session!=null){
+            try{
+                if(okPass==1){
+                    u.setPassword(DigestUtils.md5Hex(u.getPassword()));
+                }
+                
+                ok =   session.update("com.mybatis.dao.UsuarioDAO.UPDATE_USUARIO", u);
+                session.commit();
+                
+            }finally{
+                session.close();
+            }
+        }else{
+            //enviar mensaje
+        }
+        return ok;
+    }
+
+    @Override
+    public int validarPassword(Usuario u) {
+        SqlSession session = new MapperUtil().getSession();
+        int ok = 0;
+        
+        if(session!=null){
+            try{
+                
+                Usuario usuario =  (Usuario) session.selectOne("com.mybatis.dao.UsuarioDAO.GET_USER_BY_ID", u.getIdusuario());               
+               
+                if(usuario.getPassword().equals(u.getPassword())){
+                    ok = 0;
+                }else{
+                    ok = 1;
+                }
+              
+            }finally{
+                session.close();
+            }
+        }else{
+            //enviar mensaje
+        }
+        return ok;
+    }
+
+    @Override
+    public int darBajaUsuario(Usuario u) {
+        SqlSession session = new MapperUtil().getSession();
+        int ok = 0;
+        
+        if(session!=null){
+            try{
+                u.setEstado("baja");
+                ok =   session.update("com.mybatis.dao.UsuarioDAO.DAR_BAJA_USUARIO", u);               
+               
+                session.commit();
+              
+            }finally{
+                session.close();
+            }
+        }else{
+            //enviar mensaje
+        }
+        return ok;
+    }
     
 }

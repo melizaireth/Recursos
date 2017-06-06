@@ -85,14 +85,13 @@ public class UsuarioBeans {
         //En este metodo debemos verificar que el login no exista
         u.setIdproveedor(proveedor);
         u.setDepartamento(tipo);
-        System.out.println("Proveedor: "+proveedor);
-        System.out.println("Tipo: "+tipo);
+     
         u.setIdusuario(-1);
         UsuarioBO ubo = new UsuarioBO();
         int ok = ubo.verificarLogin(u);
-        System.out.println("Valor de la verificacion: "+ok);
+        
         if(ok==0){
-            System.out.println("Va a crear el usuario:" +u);
+            
             ubo.crearUsuario(u);
         }else{
             //retorno respuesta

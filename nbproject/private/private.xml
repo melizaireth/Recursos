@@ -3,22 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/web/bajaProveedor.xhtml</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/web/altaProveedor.xhtml</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/vo/Proveedor.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/vo/Factura.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/vo/Competencia.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/dao/UsuarioDAO.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/vo/Compeofertacandidato.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/vo/Ofertacompetencia.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/vo/Candidato.java</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mbeans/UsuarioBeans.java</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/mappers/UsuarioMapper.xml</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/bo/UsuarioBO.java</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mbeans/EditUsuario.java</file>
             <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/web/crearUsuarios.xhtml</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/vo/Oferta.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/dao/OfertaDAO.java</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/dao/UsuarioDAO.java</file>
             <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/web/modificarUsuarios.xhtml</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/vo/Ofertaprovee.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/web/bajaUsuario.xhtml</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/web/index.xhtml</file>
         </group>
     </open-files>
 </project-private>

@@ -9,9 +9,21 @@
     <select id="ALL_USUARIOS"  resultType="com.mybatis.vo.Usuario">
         select * from usuario
     </select>
+    
+    <select id="GET_USER_BY_ID" parameterType="int" resultType="com.mybatis.vo.Usuario">
+        select * from usuario where idusuario=#{idusuario}
+    </select>
 
     <insert id="CREAR_USUARIO" parameterType="com.mybatis.vo.Usuario">
         insert into usuario (login, password, perfil, nombre, apellidos, idproveedor, departamento) Values (#{login}, #{password}, #{perfil}, #{nombre}, #{apellidos}, #{idproveedor}, #{departamento})        
     </insert>
+    
+    <update id="UPDATE_USUARIO" parameterType="com.mybatis.vo.Usuario">
+        update usuario set login= #{login} , password=#{password}, perfil=#{perfil}, nombre=#{nombre}, apellidos=#{apellidos}, departamento= #{departamento} , idproveedor = #{idproveedor} where idusuario = #{idusuario}
+    </update>
+    
+    <update id="DAR_BAJA_USUARIO" parameterType="com.mybatis.vo.Usuario">
+        update usuario set estado = #{estado} where idusuario = #{idusuario}
+    </update>
     
 </mapper>
