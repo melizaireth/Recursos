@@ -9,6 +9,7 @@ import com.mybatis.vo.Proveedor;
 import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 
 /**
@@ -23,5 +24,7 @@ public interface ProveedorDAO {
     @Select("ALL_PROVEEDORES")
     public List<Proveedor> allProveedor();
     
+    @Update("UPDATE_PROVEEDOR")
+    public int actualizarProveedor(Proveedor P);
     
 }

@@ -52,6 +52,26 @@ public class ProveedorBO implements ProveedorDAO{
         }
         return p;
     }
+
+    @Override
+    public int actualizarProveedor(Proveedor p) {
+       
+        SqlSession session = new MapperUtil().getSession();
+        int ok = 0;
+        if(session!=null){
+            try{
+                                
+                ok =   session.update("com.mybatis.dao.ProveedorDAO.UPDATE_PROVEEDOR", p);
+                session.commit();
+                
+            }finally{
+                session.close();
+            }
+        }else{
+            //enviar mensaje
+        }
+        return ok;
+    }
     
     
     

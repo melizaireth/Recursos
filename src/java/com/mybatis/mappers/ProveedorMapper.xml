@@ -10,7 +10,11 @@
     </select>
 
     <select id="ALL_PROVEEDORES" resultType="com.mybatis.vo.Proveedor">
-        select idproveedor, nombrepro from proveedor
+        select * from proveedor
     </select>
+
+    <update id="UPDATE_PROVEEDOR" parameterType="com.mybatis.vo.Proveedor">
+        update proveedor set direccion = #{direccion} , telefono=#{telefono} where idproveedor = #{idproveedor}
+    </update>
 
 </mapper>

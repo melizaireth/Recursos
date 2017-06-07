@@ -4,7 +4,6 @@ import com.mybatis.bo.ProveedorBO;
 import com.mybatis.bo.UsuarioBO;
 import com.mybatis.vo.Proveedor;
 import com.mybatis.vo.Usuario;
-import java.awt.event.ActionEvent;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

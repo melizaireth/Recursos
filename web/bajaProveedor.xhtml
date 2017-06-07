@@ -8,7 +8,7 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:form>
+        <h:form id="formPro">
              <p:tabMenu activeIndex="#{param.i}" >
                 <p:menuitem value="Alta Usuario" outcome="crearUsuarios" > 
                     <f:param name="i" value="0" />
@@ -27,6 +27,40 @@
             <br/>
       
         <br/>
+        <p:growl id="msgs" showDetail="true"/>
+        <p:panel header="Modificar Proveedor" style="margin-bottom:20px">
+            <p:dataTable editable="true" style="margin-bottom:20px" value="#{editP.proveedores}" var="pro">
+                <p:ajax event="rowEdit" listener="#{editP.onRowEdit}" update=":formPro:msgs" />
+                <p:ajax event="rowEditCancel" listener="#{editP.onRowCancel}" update=":formPro:msgs" />
+                
+                <p:column  headerText="Nombre">
+                    <p:outputLabel ><h:outputText value="#{pro.nombrepro}" /></p:outputLabel>                    
+                </p:column>
+                <p:column  headerText="Fecha Ingreso">
+                    <p:outputLabel ><h:outputText value="#{pro.fechaingreso}" /></p:outputLabel>                                        
+                </p:column>
+                
+                <p:column  headerText="Tipo">
+                    <h:outputText value="#{pro.tipoproveedor}" />
+                </p:column>
+                <p:column  headerText="Dirección">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:inputTextarea value="#{pro.direccion}" /></f:facet>
+                        <f:facet name="input"><p:inputTextarea id="direccion" rows="5" cols="30"  maxlength="105" value="#{pro.direccion}" style="width:100%"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+                
+                 <p:column  headerText="Teléfono">
+                    <p:cellEditor>
+                        <f:facet name="output"><h:outputText value="#{pro.telefono}" /></f:facet>
+                        <f:facet name="input"><p:inputText id="telefono" value="#{pro.telefono}" style="width:100%"/></f:facet>
+                    </p:cellEditor>
+                </p:column>
+                <p:column style="width:32px">
+                    <p:rowEditor />                        
+                </p:column>
+            </p:dataTable>
+        </p:panel>
         </h:form>
     </h:body>
 </html>
