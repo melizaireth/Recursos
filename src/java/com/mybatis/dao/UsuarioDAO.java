@@ -16,11 +16,16 @@ import org.apache.ibatis.annotations.Update;
  * @author Melissa
  */
 public interface UsuarioDAO {
-    public String USER_FRONT_FACTURA = "Front Facturación";
-    public String USER_FRONT_RECURSO = "Front Recursos";
-    public String USER_BACK_FACTURA = "Back Facturación";
-    public String USER_BACK_RECURSO = "Back Recursos";
+    public String USER_FRONT_FACTURA = "FRONT_FACTURACION";
+    public String USER_FRONT_RECURSO = "FRONT_RECURSOS";
+    public String USER_BACK_FACTURA = "BACK_FACTURACION";
+    public String USER_BACK_RECURSO = "BACK_FACTURACION";
+    
+    
             
+    @Select("GET_USER_BY_USERID")
+    public Usuario getUserByUserId();
+    
     @Insert("CREAR_USUARIO")
     public void crearUsuario(Usuario u);
    // public void modificarUsuario(Usuario uvo);

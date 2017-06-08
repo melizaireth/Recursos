@@ -156,5 +156,10 @@ public class UsuarioBO implements UsuarioDAO{
         }
         return ok;
     }
+
+    @Override
+    public Usuario getUserByUserId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

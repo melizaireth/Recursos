@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mbeans/UsuarioBeans.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/mappers/UsuarioMapper.xml</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/web/bajaProveedor.xhtml</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/mappers/ProveedorMapper.xml</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/web/altaProveedor.xhtml</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/dao/ProveedorDAO.java</file>
             <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/bo/UsuarioBO.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mbeans/EditUsuario.java</file>
-            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mybatis/dao/UsuarioDAO.java</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/web/crearUsuarios.xhtml</file>
             <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/web/modificarUsuarios.xhtml</file>
+            <file>file:/C:/Users/Melissa/Documents/NetBeansProjects/Recursos/src/java/com/mbeans/EditProveedor.java</file>
         </group>
     </open-files>
 </project-private>
