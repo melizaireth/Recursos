@@ -3,24 +3,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-         <link rel="shortcut icon" type="imagen/jpg" href="imagen/mundo.jpg" />
+         <link rel="shortcut icon" type="resources/imagen/jpg" href="imagen/mundo.jpg" />
+        
+         <link rel="stylesheet" type="text/css" href="resources/css/login.css"></link>
         <title>Beds - Fundación Telefónica</title>
     </h:head>
-    <h:body>
-       
-        <h1>Bienvenido al Sistema de Gestión de Recursos</h1>
-           <h:form id="loginForm" >  
-		<p:panelGrid id="pni" columns="2"  >
-		<h:outputText value="Username:" />
-		<h:inputText   value="#{log.username}"  />
-		<h:outputText value="Password" />
-		<h:inputSecret  value="#{log.password}" />
+
+    <h:body id="principal">
+              
+        <div class="container">
+            <img src="resources/imagen/users.png"></img>
+        <h:form id="loginForm"  >  
+            
+            <div class="fa-user">
+                <i class="fa-user" aria-hidden="true" >
+            <h:inputText a:placeholder="Enter Username"  value="#{log.username}" />
+            </i>
+		</div>
+            <div>
+		<h:inputSecret a:placeholder="Enter Password" value="#{log.password}" />
+                </div>
 		<h:outputText  />
-		<h:commandButton value ="Inicia" action="#{log.actionValidar()}" />
-		</p:panelGrid>
+                <h:commandButton value ="LOGIN" class="btn-login" action="#{log.actionValidar()}" />
+                <br/><br/> <a href="#">Forget Password?</a>
 	</h:form>
+            </div>
     </h:body>
 </html>
 

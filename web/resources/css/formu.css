@@ -1,0 +1,24 @@
+/* 
+    Created on : 28-may-2017, 14:39:01
+    Author     : Melissa
+*/
+body{
+    background-color: activeborder
+    
+}
+h1{
+    font-family: "Old English Text MT";
+    align-items:  center;
+     margin:auto;
+}
+.cuadro {
+	
+        
+        margin:auto;
+        border: 0px;
+        left: 150%;
+	top: 50%;
+	
+	
+	
+}
