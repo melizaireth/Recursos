@@ -1,7 +1,8 @@
 html{
     margin: 0 auto;    
-    
-    background-color: lavender;
+    background-image: url('../imagen/roraima.jpg');
+    background-repeat: no-repeat;
+    align-content: center;
 }
 #principal{
     width: 1024px;
